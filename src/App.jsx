@@ -4,8 +4,8 @@ import Landing from "./pages/landing/landing";
 import Auth from "./pages/landing/auth";
 import Creator from "./pages/dashboards/creator";
 import Worker from "./pages/dashboards/worker";
-import Assignment from "./pages/tools/assignment";
-import Answered from "./pages/assignments/Answered";
+import AssignmentTool from "./pages/tools/assignment";
+import Answered from "./pages/submissions/Submission";
 
 export default function App() {
   return (
@@ -13,12 +13,18 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
+
           <Route path="/auth" element={<Auth />} />
+          <Route path="/auth/:mode" element={<Auth />} />
 
           <Route path="/dashboards/creator" element={<Creator />} />
           <Route path="/dashboards/worker" element={<Worker />} />
 
-          <Route path="/tools/assigment" element={<Assignment />} />
+          <Route path="/tools/assignment" element={<AssignmentTool />} />
+          <Route
+            path="/tools/assignment/:assignmentId"
+            element={<AssignmentTool />}
+          />
 
           <Route path="/assigment/:id" element={<Answered />} />
         </Routes>
